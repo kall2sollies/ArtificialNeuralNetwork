@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50AAD9B8-9F66-44BB-89B4-0B1662F67E0E}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtificialNeuralNetwork.Library", "src\ArtificialNeuralNetwork.Library\ArtificialNeuralNetwork.Library.csproj", "{AFE83641-504E-457B-85C1-FFC7280D20BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtificialNeuralNetwork.ConsoleApp", "src\ArtificialNeuralNetwork.ConsoleApp\ArtificialNeuralNetwork.ConsoleApp.csproj", "{DE8C0CA8-8B74-4878-92B2-F855979DD902}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{71EC86E9-7381-4F10-B53C-C3FD67496E4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFE83641-504E-457B-85C1-FFC7280D20BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE83641-504E-457B-85C1-FFC7280D20BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE83641-504E-457B-85C1-FFC7280D20BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE83641-504E-457B-85C1-FFC7280D20BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8C0CA8-8B74-4878-92B2-F855979DD902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8C0CA8-8B74-4878-92B2-F855979DD902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8C0CA8-8B74-4878-92B2-F855979DD902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8C0CA8-8B74-4878-92B2-F855979DD902}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AFE83641-504E-457B-85C1-FFC7280D20BB} = {71EC86E9-7381-4F10-B53C-C3FD67496E4D}
+		{DE8C0CA8-8B74-4878-92B2-F855979DD902} = {71EC86E9-7381-4F10-B53C-C3FD67496E4D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E243499-E04B-4B08-BC74-63A1D7FEAA71}
+	EndGlobalSection
+EndGlobal
