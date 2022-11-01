@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtificialNeuralNetwork.Con
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{71EC86E9-7381-4F10-B53C-C3FD67496E4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtificialNeuralNetwork.Abstractions", "src\ArtificialNeuralNetwork.Abstractions\ArtificialNeuralNetwork.Abstractions.csproj", "{C1D7A38A-9086-4E38-B286-B8AAF92BABCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{DE8C0CA8-8B74-4878-92B2-F855979DD902}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE8C0CA8-8B74-4878-92B2-F855979DD902}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE8C0CA8-8B74-4878-92B2-F855979DD902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D7A38A-9086-4E38-B286-B8AAF92BABCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D7A38A-9086-4E38-B286-B8AAF92BABCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D7A38A-9086-4E38-B286-B8AAF92BABCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D7A38A-9086-4E38-B286-B8AAF92BABCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +41,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AFE83641-504E-457B-85C1-FFC7280D20BB} = {71EC86E9-7381-4F10-B53C-C3FD67496E4D}
 		{DE8C0CA8-8B74-4878-92B2-F855979DD902} = {71EC86E9-7381-4F10-B53C-C3FD67496E4D}
+		{C1D7A38A-9086-4E38-B286-B8AAF92BABCA} = {71EC86E9-7381-4F10-B53C-C3FD67496E4D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E243499-E04B-4B08-BC74-63A1D7FEAA71}
