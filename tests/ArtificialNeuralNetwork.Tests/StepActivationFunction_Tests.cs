@@ -1,5 +1,5 @@
 using ArtificialNeuralNetwork.Abstractions;
-using ArtificialNeuralNetwork.Library;
+using ArtificialNeuralNetwork.Library.Functions;
 using FluentAssertions;
 
 namespace ArtificialNeuralNetwork.Tests

@@ -1,6 +1,6 @@
 ﻿using ArtificialNeuralNetwork.Abstractions;
 
-namespace ArtificialNeuralNetwork.Library
+namespace ArtificialNeuralNetwork.Library.Functions
 {
     public class WeightedSumFunction : IInputFunction
     {

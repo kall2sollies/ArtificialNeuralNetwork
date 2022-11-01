@@ -1,11 +1,11 @@
 using ArtificialNeuralNetwork.Abstractions;
-using ArtificialNeuralNetwork.Library;
+using ArtificialNeuralNetwork.Library.Functions;
 using FluentAssertions;
 using Moq;
 
 namespace ArtificialNeuralNetwork.Tests
 {
-    public class WeightedSumFunction_Tests
+    public class ISynapse_WeightedSumFunction_Tests
     {
         [Fact]
         [Trait("Category", "Unit")]
