@@ -19,7 +19,7 @@ namespace ArtificialNeuralNetwork.Tests
 
             var output = stepActivationFunction.CalculateOutput(input);
 
-            output.Should().BeInRange(expected - 0.01, expected + 0.01);
+            output.Should().BeApproximately(expected, 0.01d);
         }
     }
 }
