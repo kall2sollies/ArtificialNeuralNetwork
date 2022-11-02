@@ -1,6 +1,7 @@
 # ArtificialNeuralNetwork
 
 This project is a sandbox based on this article : https://rubikscode.net/2022/07/04/implementing-simple-neural-network-in-c/
+One good TL;DR of ANN can be found here : https://www.linkedin.com/pulse/functions-weights-bias-artificial-neural-networks-doug-rose/
 
 # Model
 

@@ -1,36 +1,35 @@
 ﻿using ArtificialNeuralNetwork.Abstractions;
 
-namespace ArtificialNeuralNetwork.Library
+namespace ArtificialNeuralNetwork.Library;
+
+public class Synapse : ISynapse
 {
-    public class Synapse : ISynapse
+    private readonly INeuron _from;
+    private readonly INeuron _to;
+
+    public double Weight { get; set; }
+    public double PreviousWeight { get; set; }
+
+    public Synapse(INeuron from, INeuron to, double weight)
     {
-        private readonly INeuron _from;
-        private readonly INeuron _to;
+        _from = from;
+        _to = to;
 
-        public double Weight { get; set; }
-        public double PreviousWeight { get; set; }
+        Weight = weight;
+        PreviousWeight = 0;
+    }
 
-        public Synapse(INeuron from, INeuron to, double weight)
-        {
-            _from = from;
-            _to = to;
+    public Synapse(INeuron from, INeuron to) : this(from, to, new Random().NextDouble())
+    {
+    }
 
-            Weight = weight;
-            PreviousWeight = 0;
-        }
+    public double GetOutput() => _from.CalculateOutput();
 
-        public Synapse(INeuron from, INeuron to) : this(from, to, new Random().NextDouble())
-        {
-        }
+    public bool IsFromNeuron(Guid fromNeuronId) => _from.Id == fromNeuronId;
 
-        public double GetOutput() => _from.CalculateOutput();
-
-        public bool IsFromNeuron(Guid fromNeuronId) => _from.Id == fromNeuronId;
-
-        public void UpdateWeight(double learningRate, double delta)
-        {
-            PreviousWeight = Weight;
-            Weight += learningRate * delta;
-        }
+    public void UpdateWeight(double learningRate, double delta)
+    {
+        PreviousWeight = Weight;
+        Weight += learningRate * delta;
     }
 }

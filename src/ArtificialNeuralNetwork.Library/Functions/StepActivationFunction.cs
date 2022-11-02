@@ -1,19 +1,18 @@
 ﻿using ArtificialNeuralNetwork.Abstractions;
 
-namespace ArtificialNeuralNetwork.Library.Functions
+namespace ArtificialNeuralNetwork.Library.Functions;
+
+public class StepActivationFunction : IActivationFunction
 {
-    public class StepActivationFunction : IActivationFunction
+    private readonly double _threshold;
+
+    public StepActivationFunction(double threshold)
     {
-        private readonly double _threshold;
+        _threshold = threshold;
+    }
 
-        public StepActivationFunction(double threshold)
-        {
-            _threshold = threshold;
-        }
-
-        public double CalculateOutput(double input)
-        {
-            return input > _threshold ? 1d : 0d;
-        }
+    public double CalculateOutput(double input)
+    {
+        return input > _threshold ? 1d : 0d;
     }
 }

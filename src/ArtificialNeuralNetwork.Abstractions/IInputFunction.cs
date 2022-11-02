@@ -1,7 +1,6 @@
-﻿namespace ArtificialNeuralNetwork.Abstractions
+﻿namespace ArtificialNeuralNetwork.Abstractions;
+
+public interface IInputFunction
 {
-    public interface IInputFunction
-    {
-        double CalculateInput(List<ISynapse> inputs);
-    }
+    double CalculateInput(List<ISynapse> inputs);
 }

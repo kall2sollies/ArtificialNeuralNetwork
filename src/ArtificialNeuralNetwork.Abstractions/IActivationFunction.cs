@@ -1,7 +1,6 @@
-﻿namespace ArtificialNeuralNetwork.Abstractions
+﻿namespace ArtificialNeuralNetwork.Abstractions;
+
+public interface IActivationFunction
 {
-    public interface IActivationFunction
-    {
-        double CalculateOutput(double input);
-    }
+    double CalculateOutput(double input);
 }
