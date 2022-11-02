@@ -58,3 +58,17 @@ The neuron sends the result of the input function to an activation function.
 The role of this function is to activate or not the output, given the value of the input.
 
 It can be seen as a gate with a threshold (step activation function), or a projection of the real numbers to the interval [0,1] (sigmoid)...
+
+# C# implementation
+
+## Model
+
+The model is inspired by the article linked in the abstract of this document. It aims to represent the ANN in the object oriented programmation's perspective, and as such, will not
+be using matricial calculus, even though matrix-based implementations would be way much faster and efficient than the one in this project.  
+
+## Limits / missing
+
+One common implementation mentions 'bias' (plural : biases) as a part of the neuron modelling. The bias is a number variable held by the neuron,
+and the bias is added to the result of the input function.
+
+This notion is missing from the article used as a source for this implementation, but might be easily added.
