@@ -2,7 +2,7 @@ using ArtificialNeuralNetwork.Abstractions;
 using ArtificialNeuralNetwork.Library.Functions;
 using FluentAssertions;
 
-namespace ArtificialNeuralNetwork.Tests;
+namespace ArtificialNeuralNetwork.Tests.Functions;
 
 public class SigmoidActivationFunction_Tests
 {

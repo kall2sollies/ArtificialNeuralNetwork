@@ -6,8 +6,8 @@ public class InputSynapse : ISynapse
 {
     private readonly INeuron _to;
 
-    public double Weight { get; set; }
-    public double PreviousWeight { get; set; }
+    public double Weight { get; init; }
+    public double PreviousWeight { get; init; }
     public double Output { get; set; }
 
     public InputSynapse(INeuron to)
@@ -25,6 +25,7 @@ public class InputSynapse : ISynapse
     public double GetOutput() => Output;
 
     public bool IsFromNeuron(Guid fromNeuronId) => false;
+    public bool IsFromNeuron(INeuron fromNeuron) => IsFromNeuron(fromNeuron.Id);
 
     public void UpdateWeight(double learningRate, double delta)
     {

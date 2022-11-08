@@ -3,9 +3,9 @@ using ArtificialNeuralNetwork.Library.Functions;
 using FluentAssertions;
 using Moq;
 
-namespace ArtificialNeuralNetwork.Tests;
+namespace ArtificialNeuralNetwork.Tests.Functions;
 
-public class ISynapse_WeightedSumFunction_Tests
+public class WeightedSumFunction_Tests
 {
     [Fact]
     [Trait("Category", "Unit")]
@@ -28,8 +28,8 @@ public class ISynapse_WeightedSumFunction_Tests
         Mock<ISynapse> synapse = new();
         synapse.Setup(s => s.Weight).Returns(weight);
         synapse.Setup(s => s.GetOutput()).Returns(output);
-            
-        var synapses = new List<ISynapse> {synapse.Object};
+
+        var synapses = new List<ISynapse> { synapse.Object };
 
         IInputFunction inputFunction = new WeightedSumFunction();
 
@@ -39,7 +39,7 @@ public class ISynapse_WeightedSumFunction_Tests
     }
 
     [Theory]
-    [InlineData(12, 42, 14, 54, (12 * 42) + (14 * 54))]
+    [InlineData(12, 42, 14, 54, 12 * 42 + 14 * 54)]
     [Trait("Category", "Unit")]
     public void CalculateInput_Should_Return_ExpectedValues_With_TwoSynapses(double weight1, double output1, double weight2, double output2, double expected)
     {
@@ -50,8 +50,8 @@ public class ISynapse_WeightedSumFunction_Tests
         Mock<ISynapse> synapse2 = new();
         synapse2.Setup(s => s.Weight).Returns(weight2);
         synapse2.Setup(s => s.GetOutput()).Returns(output2);
-            
-        var synapses = new List<ISynapse> {synapse1.Object, synapse2.Object};
+
+        var synapses = new List<ISynapse> { synapse1.Object, synapse2.Object };
 
         IInputFunction inputFunction = new WeightedSumFunction();
 
