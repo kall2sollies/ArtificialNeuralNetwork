@@ -104,6 +104,29 @@ public class Synapse_Tests
 
     [Fact]
     [Trait("Category", "Unit")]
+    public void IsToNeuron_Should_MatchToNeuron()
+    {
+        // Arrange
+        Mock<INeuron> fromNeuron = new Mock<INeuron>();
+        Mock<INeuron> toNeuron = new Mock<INeuron>();
+        Guid fromNeuronId = Guid.NewGuid();
+        Guid toNeuronId = Guid.NewGuid();
+        fromNeuron.Setup(x => x.Id).Returns(fromNeuronId);
+        toNeuron.Setup(x => x.Id).Returns(toNeuronId);
+
+        ISynapse sut = new Synapse(
+            from: fromNeuron.Object,
+            to: toNeuron.Object);
+
+        // Act & Assert
+        sut.IsToNeuron(toNeuron.Object).Should().BeTrue();
+        sut.IsToNeuron(toNeuron.Object.Id).Should().BeTrue();
+        sut.IsToNeuron(fromNeuron.Object).Should().BeFalse();
+        sut.IsToNeuron(fromNeuron.Object.Id).Should().BeFalse();
+    }
+
+    [Fact]
+    [Trait("Category", "Unit")]
     public void GetOutput_Should_ReturnFromNeuronOutput()
     {
         // Arrange

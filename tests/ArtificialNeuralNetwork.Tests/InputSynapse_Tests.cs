@@ -79,4 +79,20 @@ public class InputSynapse_Tests
         // Act & Assert
         sut.IsFromNeuron(toNeuron.Object).Should().BeFalse();
     }
+
+    [Fact]
+    [Trait("Category", "Unit")]
+    public void IsToNeuron_Should_ReturnTrue()
+    {
+        // Arrange
+        Mock<INeuron> toNeuron = new Mock<INeuron>();
+        Guid toNeuronId = Guid.NewGuid();
+        toNeuron.Setup(x => x.Id).Returns(toNeuronId);
+
+        ISynapse sut = new InputSynapse(
+            to: toNeuron.Object);
+
+        // Act & Assert
+        sut.IsToNeuron(toNeuron.Object).Should().BeTrue();
+    }
 }

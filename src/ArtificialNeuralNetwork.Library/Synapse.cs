@@ -29,6 +29,10 @@ public class Synapse : ISynapse
 
     public bool IsFromNeuron(INeuron fromNeuron) => IsFromNeuron(fromNeuron.Id);
 
+    public bool IsToNeuron(Guid toNeuronId) => _to.Id == toNeuronId;
+
+    public bool IsToNeuron(INeuron toNeuron) => IsToNeuron(toNeuron.Id);
+
     public void UpdateWeight(double learningRate, double delta)
     {
         PreviousWeight = Weight;

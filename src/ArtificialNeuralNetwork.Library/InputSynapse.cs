@@ -25,7 +25,12 @@ public class InputSynapse : ISynapse
     public double GetOutput() => Output;
 
     public bool IsFromNeuron(Guid fromNeuronId) => false;
+
     public bool IsFromNeuron(INeuron fromNeuron) => IsFromNeuron(fromNeuron.Id);
+
+    public bool IsToNeuron(Guid toNeuronId) => _to.Id == toNeuronId;
+
+    public bool IsToNeuron(INeuron toNeuron) => IsToNeuron(toNeuron.Id);
 
     public void UpdateWeight(double learningRate, double delta)
     {

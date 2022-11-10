@@ -79,10 +79,13 @@ public class Neuron_Tests
     [Trait("Category", "Unit")]
     public void AddInputSynapse_Should_ProduceExpectedOutput(double input, double expectedOutput)
     {
+        // Arrange
         INeuron sut = new Neuron(new RectifierActivationFunction(), new WeightedSumFunction());
 
+        // Act
         sut.AddInputSynapse(input);
 
+        // Assert
         sut.CalculateOutput().Should().Be(expectedOutput);
     }
 
@@ -93,14 +96,65 @@ public class Neuron_Tests
     [Trait("Category", "Unit")]
     public void PushValueOnInput_Should_UpdateOutput(double input, double expectedOutput)
     {
+        // Arrange
         INeuron sut = new Neuron(new RectifierActivationFunction(), new WeightedSumFunction());
-
         sut.AddInputSynapse(1.2);
-
         sut.CalculateOutput().Should().Be(1.2);
 
+        // Act
         sut.PushValueOnInput(input);
 
+        // Assert
         sut.CalculateOutput().Should().Be(expectedOutput);
+    }
+
+    [Fact]
+    [Trait("Category", "Unit")]
+    public void AddInputNeuron_Should_ConnectNeuronsBothWays()
+    {
+        // Arrange
+        INeuron input1 = new Neuron(new RectifierActivationFunction(), new WeightedSumFunction());
+        INeuron input2 = new Neuron(new RectifierActivationFunction(), new WeightedSumFunction());
+        INeuron sut = new Neuron(new RectifierActivationFunction(), new WeightedSumFunction());
+
+        // Act
+        sut.AddInputNeuron(input1);
+        sut.AddInputNeuron(input2);
+
+        // Assert
+        sut.Inputs.Count.Should().Be(2);
+        sut.Outputs.Count.Should().Be(0);
+        input1.Outputs.Count.Should().Be(1);
+        input2.Outputs.Count.Should().Be(1);
+
+        sut.Inputs.Count(x => x.IsFromNeuron(input1)).Should().Be(1);
+        sut.Inputs.Count(x => x.IsFromNeuron(input2)).Should().Be(1);
+        input1.Outputs.Count(x => x.IsToNeuron(sut)).Should().Be(1);
+        input2.Outputs.Count(x => x.IsToNeuron(sut)).Should().Be(1);
+    }
+
+    [Fact]
+    [Trait("Category", "Unit")]
+    public void AddOutputNeuron_Should_ConnectNeuronsBothWays()
+    {
+        // Arrange
+        INeuron output1 = new Neuron(new RectifierActivationFunction(), new WeightedSumFunction());
+        INeuron output2 = new Neuron(new RectifierActivationFunction(), new WeightedSumFunction());
+        INeuron sut = new Neuron(new RectifierActivationFunction(), new WeightedSumFunction());
+
+        // Act
+        sut.AddOutputNeuron(output1);
+        sut.AddOutputNeuron(output2);
+
+        // Assert
+        sut.Outputs.Count.Should().Be(2);
+        sut.Inputs.Count.Should().Be(0);
+        output1.Inputs.Count.Should().Be(1);
+        output2.Inputs.Count.Should().Be(1);
+
+        sut.Outputs.Count(x => x.IsToNeuron(output1)).Should().Be(1);
+        sut.Outputs.Count(x => x.IsToNeuron(output2)).Should().Be(1);
+        output1.Inputs.Count(x => x.IsFromNeuron(sut)).Should().Be(1);
+        output2.Inputs.Count(x => x.IsFromNeuron(sut)).Should().Be(1);
     }
 }
